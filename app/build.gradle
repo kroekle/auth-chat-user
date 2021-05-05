@@ -16,7 +16,7 @@ repositories {
     jcenter()
 }
 
-var artifactTag = '0.1.0'
+var artifactTag = 'v1-0'
 
 dependencies {
     // Use JUnit test framework.
@@ -26,13 +26,16 @@ dependencies {
     implementation 'org.gwizard:gwizard-rest:0.11'
 }
 
+targetCompatibility=11
+sourceCompatibility=11
+
 jib {
 	from {
 		image = 'gcr.io/distroless/java:11'
 	}
 	to {
 		image = "gcr.io/cloud-native-madison/auth-chat-user"
-		tags = [artifactTag, 'latest']
+		tags = [artifactTag]
 	}
 	// using docker-credential-gcr for auth @see https://cloud.google.com/container-registry/docs/advanced-authentication#standalone-helper
 	container {
