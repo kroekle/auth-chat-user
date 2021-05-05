@@ -16,7 +16,7 @@ public class UserModule extends AbstractModule {
     private static final class MyWebConfig extends WebConfig {
         @Override
         public int getPort() {
-            return 8777;
+            return 80;
         }
     }
 
